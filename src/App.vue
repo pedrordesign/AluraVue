@@ -1,6 +1,8 @@
 <template>
   <div id="app" class="page-container">
-    <router-view/>
+    <transition name="page">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -21,5 +23,14 @@ export default {
 .main-header{
   top:0px;
   margin-top:0px;
+}
+
+.page-enter, .page-leave-active {
+  opacity: 0;
+
+}
+.page-enter-active, .page-leave-active {
+  transition: .5s
+
 }
 </style>
